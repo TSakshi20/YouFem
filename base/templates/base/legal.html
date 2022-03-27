@@ -1,0 +1,681 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YouFem</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static "css/open-iconic-bootstrap.min.css" %}">	
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "css/aos.css" %}">
+    <link rel="stylesheet" href="{% static "css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css/jquery.timepicker.css" %}">    
+    <link rel="stylesheet" href="{% static "css/flaticon.css" %}">
+    <link rel="stylesheet" href="{% static "css/icomoon.css" %}">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  <body>
+
+	<!--NAVBAR-->
+  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">YouFem<small>Legal</small></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        	<ul class="navbar-nav ml-auto">
+	          	<li class="nav-item active"><a href="{%url 'landing' %}" class="nav-link">Home</a></li>
+	          	<li class="nav-item"><a href="#AboutUs" class="nav-link">About Us</a></li>
+	          	<li class="nav-item"><a href="#BookAppointment" class="nav-link">Book Appointment</a></li>
+	          	<li class="nav-item"><a href="#KnowRights" class="nav-link">Know Rights</a></li>
+	          	<li class="nav-item"><a href="{%url 'medical'%}" class="nav-link">Medical Health</a></li>
+	          	<li class="nav-item"><a href="{%url 'mental'%}" class="nav-link">Mental Health</a></li>
+	        	</ul>
+	      </div>
+		</div>
+	</nav>
+    <!-- END nav -->
+
+
+	
+	<!--CARAOUSEL-->
+    <section class="home-slider owl-carousel">
+	  <div class="slider-item" style="background-image: url({% static 'images/legal/carousel_bg_1.jpg'  %});">
+      	<div class="overlay"></div>
+        	<div class="container">
+          		<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+            		<div class="col-md-8 col-sm-12 text-center ftco-animate">
+            			<span class="subheading">Welcome</span>
+              			<h1 class="mb-4">Bridging gaps between laws in India and Common People</h1>
+              			<p class="mb-4 mb-md-5">YouFem will contribute towards reducing gender inequality.</p>
+              			<p><a href="#AllRights" class="btn btn-primary p-3 px-xl-4 py-xl-3">Explore Laws</a> <a href="#BookAppointment" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Lawyer</a></p>
+            		</div>
+          		</div>
+        	</div>
+        </div>
+
+	  <div class="slider-item" style="background-image: url({% static 'images/legal/carousel_bg_2.jpg' %});">
+      	<div class="overlay"></div>
+        	<div class="container">
+          		<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+            		<div class="col-md-8 col-sm-12 text-center ftco-animate">
+            			<span class="subheading">Welcome</span>
+              			<h1 class="mb-4">Making laws friendly and less intimidating</h1>
+             			<p class="mb-4 mb-md-5">YouFem will help you in consulting a Lawyer to get your queries answered.</p>
+              			<p><a href="#AllRights" class="btn btn-primary p-3 px-xl-4 py-xl-3">Explore Laws</a> <a href="#BookAppointment" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Lawyer</a></p>
+            		</div>
+          		</div>
+        	</div>
+      	</div>
+
+	  <div class="slider-item" style="background-image: url({% static 'images/legal/carousel3.jpg' %});">
+      	<div class="overlay"></div>
+        	<div class="container">
+          		<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+            		<div class="col-md-8 col-sm-12 text-center ftco-animate">
+            			<span class="subheading">Welcome</span>
+              			<h1 class="mb-4">Empowering Women of India</h1>
+              			<p class="mb-4 mb-md-5">Knowledge and Information are most important instruments to facilitate change</p>
+              			<p><a href="#AllRights" class="btn btn-primary p-3 px-xl-4 py-xl-3">Explore Laws</a> <a href="#BookAppointment" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Lawyer</a></p>
+            		</div>
+          		</div>
+        	</div>
+      	</div>
+    </section>
+	<!--END CARAOUSEL-->
+
+
+    <section class="ftco-intro">
+    	<div class="container-wrap">
+    		<div class="wrap d-md-flex align-items-xl-end">
+	    		<div class="info">
+	    			<div class="row no-gutters">
+	    				<div class="col-md-4 d-flex ftco-animate">
+	    					<div class="icon"><span class="icon-phone"></span></div>
+	    					<div class="text">
+	    						<h3>9999999999</h3>
+	    						<p>Making laws friendly and less intimidating</p>
+	    					</div>
+	    				</div>
+	    				<div class="col-md-4 d-flex ftco-animate">
+	    					<div class="icon"><span class="icon-my_location"></span></div>
+	    					<div class="text">
+	    						<h3>Vanasthali Road</h3>
+	    						<p>	Vanasthali Road, Dist, Vanasthali, Rajasthan 304022</p>
+	    					</div>
+	    				</div>
+	    				<div class="col-md-4 d-flex ftco-animate">
+	    					<div class="icon"><span class="icon-clock-o"></span></div>
+	    					<div class="text">
+	    						<h3>Book an Appointment</h3>
+	    						<p>Contact Lawyers to resolve your queries</p>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="book p-4">
+	    			<h3>Book an Appointment</h3>
+	    			<form action="#" class="appointment-form">
+	    				<div class="d-md-flex">
+		    				<div class="form-group">
+		    					<input type="text" class="form-control" placeholder="First Name">
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<input type="text" class="form-control" placeholder="Last Name">
+		    				</div>
+	    				</div>
+	    				<div class="d-md-flex">
+		    				<div class="form-group">
+		    					<div class="input-wrap">
+		            				<div class="icon"><span class="ion-md-calendar"></span></div>
+		            				<input type="text" class="form-control appointment_date" placeholder="Date">
+	            				</div>
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<div class="input-wrap">
+		            				<div class="icon"><span class="ion-ios-clock"></span></div>
+		            				<input type="text" class="form-control appointment_time" placeholder="Time">
+	            				</div>
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<input type="text" class="form-control" placeholder="Phone">
+		    				</div>
+	    				</div>
+	    				<div class="d-md-flex">
+	    					<div class="form-group">
+		              			<textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+		            		</div>
+		            		<div class="form-group ml-md-4">
+		              			<input type="submit" value="Appointment" class="btn btn-white py-3 px-4">
+		            		</div>
+	    				</div>
+	    			</form>
+	    		</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-about d-md-flex" id="AboutUs">
+		<div class="one-half img" style="background-image: url({% static 'images/legal/about_section.jpg' %});"></div>
+    	<div class="one-half ftco-animate">
+    		<div class="overlap">
+	        	<div class="heading-section ftco-animate ">
+	        		<span class="subheading">Discover</span>
+	          		<h2 class="mb-4">Our Motive</h2>
+	        	</div>
+	        <div>
+	  			<p>We want to uplift and empower women.The core principle of YouFem Legal is to make legal awareness accessible to women.Through our legal awareness, we help women understand their rights and the actions they can take in any particular situation.</p>
+	  	</div>		  
+    </section>
+
+    <section class="ftco-section ftco-services">
+    	<div class="container">
+    		<div class="row">
+          		<div class="col-md-4 ftco-animate">
+            		<div class="media d-block text-center block-6 services">
+              			<div class="icon d-flex justify-content-center align-items-center mb-5">
+							<img src="{% static 'images/legal/working-1.png' %}" alt="Mountains" width="50" height="50">
+              			</div>
+              			<div class="media-body">
+                			<h3 class="heading">Gather Women Related Laws</h3>
+                			<p>We gather all women related laws and present them in simple manner.</p>
+              			</div>
+            		</div>      
+          		</div>
+
+          		<div class="col-md-4 ftco-animate">
+            		<div class="media d-block text-center block-6 services">
+              			<div class="icon d-flex justify-content-center align-items-center mb-5">
+							<img src="{% static 'images/legal/working-2.png' %}" alt="Mountains" width="50" height="50">
+              			</div>
+              			<div class="media-body">
+                			<h3 class="heading">Explain rights in simple manner</h3>
+                			<p>We explain your rights in a simple manner making the process less intimidating.</p>
+              			</div>
+            		</div>      
+          		</div>
+
+          		<div class="col-md-4 ftco-animate">
+            		<div class="media d-block text-center block-6 services">
+              			<div class="icon d-flex justify-content-center align-items-center mb-5">
+							<img src="{% static 'images/legal/working-3.png' %}" alt="Mountains" width="50" height="50">
+			  			</div>
+              			<div class="media-body">
+                			<h3 class="heading">Support from Lawyers</h3>
+                			<p>We help you if you still have a question. You can ask your queries to the lawyers.</p>
+              			</div>
+            		</div>    
+          		</div>
+        	</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section" id="KnowRights">
+    	<div class="container">
+    		<div class="row align-items-center">
+    			<div class="col-md-6 pr-md-5">
+    				<div class="heading-section text-md-right ftco-animate">
+	          			<span class="subheading">Know</span>
+	            		<h2 class="mb-4">Your Rights</h2>
+	            		<p class="mb-4">Laws in India are drafted in an extremely complex legal language. We also have a complicated legal process and multiple laws for same rights. Although the laws are made for the benefit of people , the feel alientated. There are a lot of topics which includes different subtopics. We explain the laws in a simple manner making the process less intimidating.</p>
+	            		<p><a href="#AllRights" class="btn btn-primary btn-outline-primary px-4 py-3">View All Rights</a></p>
+	          		</div>
+    			</div>
+    			<div class="col-md-6">
+    				<div class="row">
+    					<div class="col-md-6">
+    						<div class="menu-entry">
+								<a href="#" class="img" style="background-image: url({% static 'images/legal/menu_new_11.jpg' %});"></a>
+		    				</div>
+    					</div>
+    					<div class="col-md-6">
+    						<div class="menu-entry mt-lg-4">
+								<a href="#" class="img" style="background-image: url({% static 'images/legal/menu_new_21.jpg' %});"></a>
+		    				</div>
+    					</div>
+    					<div class="col-md-6">
+    						<div class="menu-entry">
+								<a href="#" class="img" style="background-image: url({% static 'images/legal/menu_new_31.jpg' %});"></a>
+		    				</div>
+    					</div>
+    					<div class="col-md-6">
+    						<div class="menu-entry mt-lg-4">
+								<a href="#" class="img" style="background-image: url({% static 'images/legal/menu_new_41.jpg' %});"></a>
+		    				</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    
+	<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url({% static 'images/legal/bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+      		<div class="container">
+        		<div class="row justify-content-center">
+        			<div class="col-md-10">
+        				<div class="row">
+		          			<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            			<div class="block-18 text-center">
+		              				<div class="text">
+		              					<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              					<strong class="number" data-number="{{lawyercount}}">0</strong>
+		              					<span>Number of Lawyers</span>
+		              				</div>
+		            			</div>
+		          			</div>
+							
+		          			<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            			<div class="block-18 text-center">
+		              				<div class="text">
+		              					<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              					<strong class="number" data-number="{{legalRightscount}}">0</strong>
+		              					<span>Law Topics</span>
+		              				</div>
+		            			</div>
+		          			</div>
+		          			<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            			<div class="block-18 text-center">
+		             				<div class="text">
+		              					<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              					<strong class="number" data-number="{{legalSubTopicscount}}">0</strong>
+		              					<span>Number of Subtopics</span>
+		              				</div>
+		            			</div>
+		          			</div>
+		          			<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            			<div class="block-18 text-center">
+		              				<div class="text">
+		              					<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              					<strong class="number" data-number="{{lawFaqscount}}">0</strong>
+		              					<span>Number of laws QnA</span>
+		              				</div>
+		            			</div>
+		          			</div>
+		        		</div>
+		      		</div>
+        		</div>
+      		</div>
+    </section>
+
+    <section class="ftco-section" id="BookAppointment">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          		<div class="col-md-7 heading-section ftco-animate text-center">
+          			<span class="subheading">Discover</span>
+            		<h2 class="mb-4">Best Lawyers</h2>
+            		<p>Book an appointment with the Lawyers. Fill the form with your queries. Lawyers will help you in solving your queries.</p>
+          		</div>
+        	</div>
+        	<div class="row">
+				{% for prof in professionals%}
+        			<div class="col-md-3">
+        				<div class="menu-entry">
+							<a href="#" class="img" style="background-image: url({{prof.profile_pic.url}});"></a>
+    						<div class="text text-center pt-4">
+    							<h3><a href="#">{{prof.pfname}} {{prof.plname}}</a></h3>
+    							<p>Experience : {{prof.experience}} years</p>							
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+									Book an Appointment
+  								</button>
+  
+  								<!-- Modal -->
+  								<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+	  									<div class="modal-content" style="background-color:#212529">
+											<div class="modal-header">
+		  										<h5 class="modal-title" id="exampleModalLongTitle">Hi user</h5>
+		  										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+		  										</button>
+											</div>
+
+											<div class="modal-body">
+												<div class="col-md-40 appointment ftco-animate">
+													<form action="#" method="post" class="appointment-form">
+														{% csrf_token %}											
+														<h6>Lawyer Details</h6>
+														<div class="d-md-flex">
+															<div class="form-group">																									
+																<label for="name">Lawyer Name  </label>
+															</div>
+															<div class="form-group">																									
+																<input type="text"  class="form-control" id="name" name="message-profname" value="{{prof.pfname}}"  disabled>
+															</div>														
+														</div>
+
+														<div class="d-md-flex">														
+															<div class="form-group">																									
+																<label for="email">Lawyer Email  </label>
+															</div>
+															<div class="form-group ml-md-8">																									
+																<input type="email" class="form-control" id="email" name="message-profemail" value="{{prof.peid}}">
+															</div>														
+														</div>
+														<hr>
+														<h6>Your Details</h6>
+														<div class="d-md-flex">
+															<div class="form-group">
+																<input type="text" class="form-control" name="message-fname" placeholder="First Name">
+															</div>
+															<div class="form-group ml-md-4">
+																<input type="text" class="form-control" name="message-lname" placeholder="Last Name">
+															</div>
+														</div>
+														<div class="d-md-flex">
+															<div class="form-group">
+																<div class="input-wrap">
+																	<input type="date" class="form-control" name="message-date" placeholder="Date">
+																</div>
+															</div>
+															<div class="form-group ml-md-4">
+																<div class="input-wrap">
+																	<input type="text" class="form-control" name="message-time" placeholder="Time">
+																</div>
+															</div>
+														</div>
+														<div class="d-md-flex">						
+															<div class="form-group ">
+																<input type="email" class="form-control" name="message-email" placeholder="Email">
+															</div>						
+															<div class="form-group ml-md-4">
+																<input type="text" class="form-control" name="message-phone" placeholder="Phone">
+															</div>
+														</div>
+														<div class="d-md-flex">
+															<div class="form-group">
+				 			 									<textarea name="message" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+															</div>														
+														</div>
+														<div class="d-md-flex">
+															<div class="form-group ml-md-4">
+																<input type="submit" value="Appointment" class="btn btn-primary py-3 px-2">
+													  		</div>														
+														</div>
+													
+													</form>
+												</div>   	
+											</div>
+	  									</div>
+									</div>
+ 						 		</div>
+    						</div>
+    					</div>
+       	 			</div>
+				{% endfor %}
+        </div>
+    </section>
+
+    <!--<section class="ftco-gallery">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+				<div class="col-md-3 ftco-animate">
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({% static 'images/gallery-1.jpg' %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+					</a>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({% static 'images/gallery-2.jpg' %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+					</a>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({% static 'images/gallery-3.jpg' %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+					</a>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url({% static 'images/gallery-4.jpg' %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+					</a>
+				</div>
+        	</div>
+    	</div>
+    </section>-->
+
+	<section class="ftco-menu" id="AllRights">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5">
+          		<div class="col-md-7 heading-section text-center ftco-animate">
+          			<span class="subheading">Learn</span>
+            		<h2 class="mb-4">About Laws</h2>
+            		<p>Browse through women related laws organised under different headings.</p>
+          		</div>
+        	</div>
+    		<div class="row d-md-flex" >
+	    		<div class="col-lg-12 ftco-animate p-md-5">
+		    		<div class="row">
+		          		<div class="col-md-12 nav-link-wrap mb-5">
+		           		 	<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              			<a class="nav-link active" id="v-pills-0-tab" data-toggle="pill" href="#v-pills-0" role="tab" aria-controls="v-pills-0" aria-selected="true">All Laws</a>
+
+					  			{% for legalright in legalRights%}
+					  				<a class="nav-link" id="v-pills-{{legalright.id}}-tab" data-toggle="pill" href="#v-pills-{{legalright.id}}" role="tab" aria-controls="v-pills-{{legalright.id}}" aria-selected="false">{{legalright.topicname}}</a>
+
+					  			{% endfor %}
+		            		</div>
+		          		</div>
+		          		<div class="col-md-12 d-flex align-items-center">
+							<div class="tab-content ftco-animate" id="v-pills-tabContent">
+								<div class="tab-pane fade show active" id="v-pills-0" role="tabpanel" aria-labelledby="v-pills-0-tab">
+		              				<div class="row">
+										{% for legalSubTopic in legalSubTopics %}
+		              					<div class="col-md-4 text-center">
+		              						<div class="menu-wrap">
+												<a href="#" class="menu-img img mb-4" style="background-image: url({% static 'images/rape.png' %});"></a>
+		              							<div class="text">
+		              								<h3><a href="#">{{legalSubTopic}}</a></h3>
+		              								<p>{{legalsubtopic}}</p>
+		              								<p><a href="{% url 'laws' legalSubTopic.id  %}"class="btn btn-primary btn-outline-primary">Explore</a></p>					
+										  		</div>
+		              						</div>
+		              					</div>
+										  {%endfor%}
+		              					
+		              					
+							  			
+		              				</div>
+		              			</div>
+
+					  			{% for legalright in legalRights%}
+		              				<div class="tab-pane fade" id="v-pills-{{legalright.id}}" role="tabpanel" aria-labelledby="v-pills-{{legalright.id}}-tab">
+		                				<div class="row">
+											{% for legalSubTopic in legalSubTopics %}
+												{% if legalSubTopic.legaltopic == legalright %}
+		              							<div class="col-md-4 text-center">
+		              								<div class="menu-wrap">
+														<a href="#" class="menu-img img mb-4" style="background-image: url({% static 'images/rape.png' %});"></a>
+		              									<div class="text">
+		              										<h3><a href="#">{{legalSubTopic}}</a></h3>
+		              										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              										<p><a href="{% url 'laws' legalSubTopic.id  %}" class="btn btn-primary btn-outline-primary">Explore</a></p>
+		              									</div>
+		              								</div>
+		              							</div>
+												{% endif %}						
+											{% endfor %}		              		
+		              					</div>
+					                </div>
+					  			{% endfor %}
+		            		</div>
+		          		</div>
+		        	</div>
+		      	</div>
+		    </div>
+    	</div>
+    </section>
+
+
+	<section class="ftco-section img" id="ftco-testimony" style="background-image: url({% static 'images/legal/bg_1.jpg' %});"  data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+	    <div class="container">
+	      <div class="row justify-content-center mb-5">
+			  <div class="col-md-7 heading-section text-center ftco-animate">
+	        		<span class="subheading">Testimony</span>
+	          		<h2 class="mb-4">Customers Says</h2>
+	          		<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	       	  </div>
+	      </div>
+	    </div>
+	    <div class="container-wrap">
+	      <div class="row d-flex no-gutters">
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+				  <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+					  	<div class="image mr-3 align-self-center">
+	                  		<img src="images/legal/person_1.jpg" alt="">
+					 	 </div>
+	                	<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                	<div class="image mr-3 align-self-center">
+	                  		<img src="images/legal/person_2.jpg" alt="">
+	                	</div>
+	                	<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                	<div class="image mr-3 align-self-center">
+	                  		<img src="images/legal/person_3.jpg" alt="">
+	                	</div>
+	                	<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                	<div class="image mr-3 align-self-center">
+	                  		<img src="images/legal/person_2.jpg" alt="">
+	                	</div>
+	                	<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	            <blockquote>
+	              <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	            </blockquote>
+	            <div class="author d-flex mt-4">
+	              	<div class="image mr-3 align-self-center">
+	                	<img src="images/legal/person_3.jpg" alt="">
+	              	</div>
+	              	<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	</section>		
+		
+
+    <footer class="ftco-footer ftco-section img">
+    	<div class="overlay"></div>
+      	<div class="container">
+        	<div class="row mb-5">
+          		<div class="col-lg-4 col-md-6 mb-5 mb-md-5">
+            		<div class="ftco-footer-widget mb-4">
+              			<h2 class="ftco-heading-2">About Us</h2>
+              			<p>We want to uplift and empower women.The core principle of YouFem Legal is to make legal awareness accessible to women.Through our legal awareness, we help women understand their rights and the actions they can take in any particular situation.</p>
+              			<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                			<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                			<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                			<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              			</ul>
+            		</div>
+          		</div>
+          	<div class="col-lg-4 col-md-6 mb-5 mb-md-5">
+             	<div class="ftco-footer-widget mb-4 ml-md-4">
+              		<h2 class="ftco-heading-2">Services</h2>
+              		<ul class="list-unstyled">
+                		<li><a href="#" class="py-2 d-block">Legal</a></li>
+                		<li><a href="#" class="py-2 d-block">Medical</a></li>
+                		<li><a href="#" class="py-2 d-block">Mental</a></li>
+              		</ul>
+            	</div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
+           	 <div class="ftco-footer-widget mb-4">
+            		<h2 class="ftco-heading-2">Have a Questions?</h2>
+            		<div class="block-23 mb-3">
+	              		<ul>
+	                		<li><span class="icon icon-map-marker"></span><span class="text">Vanasthali Road, Dist, Vanasthali, Rajasthan 304022</span></li>
+	                		<li><a href="#"><span class="icon icon-phone"></span><span class="text">9999999999</span></a></li>
+	                		<li><a href="#"><span class="icon icon-envelope"></span><span class="text">youfem.bv@gmail.com</span></a></li>
+	              		</ul>
+	            	</div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+          </div>
+        </div>
+    </footer>
+    
+  
+
+  	<!-- loader -->
+  	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  	<script src="{% static "js/jquery.min.js" %}"></script>
+  	<script src="{% static "js/jquery-migrate-3.0.1.min.js" %}"></script>
+  	<script src="{% static "js/popper.min.js" %}"></script>
+  	<script src="{% static "js/bootstrap.min.js" %}"></script>
+  	<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+  	<script src="{% static "js/jquery.waypoints.min.js" %}"></script>
+  	<script src="{% static "js/jquery.stellar.min.js" %}"></script>
+  	<script src="{% static "js/owl.carousel.min.js" %}"></script>
+  	<script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+  	<script src="{% static "js/aos.js" %}"></script>
+  	<script src="{% static "js/jquery.animateNumber.min.js" %}"></script>
+  	<script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+  	<script src="{% static "js/jquery.timepicker.min.js" %}"></script>
+  	<script src="{% static "js/scrollax.min.js" %}"></script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  	<script src="{% static "js/google-map.js" %}"></script>
+  	<script src="{% static "js/main.js" %}"></script>
+    
+ </body>
+</html>
