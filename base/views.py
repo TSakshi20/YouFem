@@ -251,5 +251,8 @@ def mental(request):
     return render(request,'base/mental.html')
 
 
+
+
+
 # def legal(request):
 #     return HttpResponse('Legal')
