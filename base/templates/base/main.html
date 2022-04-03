@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}">
+  
 
   <script type="text/javascript">
 		var user = '{{request.user}}'
@@ -31,8 +33,76 @@ const csrftoken = getToken('csrftoken');
 </script>
 </head>
 <body>
+  <nav>
+    <div class="navbar">
+      <i class="bx bx-menu"></i>
+      <div class="logo">
+        <a href="#">You<span class="fem">Fem</span></a>
+      </div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">You<span class="fem">Fem</span></span>
+          <i class="bx bx-x"></i>
+        </div>
+        <ul class="links">
+          <li>
+            <a href="{% url 'medical' %}">Medical Care</a>
+            <i class="bx bxs-chevron-down medical-arrow arrow"></i>
+            <ul class="medical-sub-menu sub-menu">
+              <li><a href="#">Consult Doctor</a></li>
+              <li><a href="#">YouFem Store</a></li>
+              <li><a href="#">Period Tracker</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{%url 'legal' %}">Legal Services</a>
+            <i class="bx bxs-chevron-down legal-arrow arrow"></i>
+            <ul class="legal-sub-menu sub-menu">
+              <li><a href="#">Consult Lawyer</a></li>
+              <li><a href="#">Know Your Rights</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{%url 'mental'%}">Mental Health</a>
+            <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+            <ul class="mental-sub-menu sub-menu">
+              <li><a href="#">Consult Psychiatrist</a></li>
+              <li><a href="#">Mental Health Quiz</a></li>
+            </ul>
+          </li>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <!--<li><a href="#">Forum</a></li>-->
+          <li><a href="#contact">Contact Us</a></li>
+
+          {% if request.user.is_authenticated %}
+
+          <li>
+            <a href="#">{{request.user}}</a>
+            <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+            <ul class="mental-sub-menu sub-menu">
+              <li><a href="{%url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>
+
+          
+
+          {% else %}
+          <li id="login-signup"><a href="{%url 'register-user' %}">Login/SignUp</a></li>
+          {% endif %}
+
+        <li>
+        <a href="{% url 'cart' %}">
+          <img  id="cart-icon" src="{% static 'images/cartimage.png' %}">
+          
+      </a>
+      <p id="cart-total">{{cartItems}}</p></li>
+      
+      </ul>
+      </div>
+    </div>
+  </nav>
+
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{% url 'store' %}">YouFem</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,7 +116,7 @@ const csrftoken = getToken('csrftoken');
        
           </ul>
           <div class="form-inline my-2 my-lg-0">
-               <!--<a href="#"class="btn btn-warning">Login</a>-->
+               <!--<a href="#"class="btn btn-warning">Login</a>
                
                <a href="{% url 'cart' %}">
                   <img  id="cart-icon" src="{% static 'images/cartimage.png' %}">
@@ -55,7 +125,7 @@ const csrftoken = getToken('csrftoken');
       
           </div>
         </div>
-      </nav>
+      </nav>-->
      <div class="container">
             <br>
             {% block content %}
@@ -72,5 +142,6 @@ const csrftoken = getToken('csrftoken');
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/landing.js' %}"></script>
 </body>
 </html>

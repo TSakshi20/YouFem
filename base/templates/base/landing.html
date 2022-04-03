@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>YouFem</title>
-    <link rel="stylesheet" href="{% static "css/landing.css" %}"/>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -27,7 +27,7 @@
           </div>
           <ul class="links">
             <li>
-              <a href="#">Medical Care</a>
+              <a href="{% url 'medical' %}">Medical Care</a>
               <i class="bx bxs-chevron-down medical-arrow arrow"></i>
               <ul class="medical-sub-menu sub-menu">
                 <li><a href="#">Consult Doctor</a></li>
@@ -44,7 +44,7 @@
               </ul>
             </li>
             <li>
-              <a href="{%url 'medical'%}">Mental Health</a>
+              <a href="{%url 'mental'%}">Mental Health</a>
               <i class="bx bxs-chevron-down mental-arrow arrow"></i>
               <ul class="mental-sub-menu sub-menu">
                 <li><a href="#">Consult Psychiatrist</a></li>
@@ -52,8 +52,8 @@
               </ul>
             </li>
 
-            <li><a href="#">Forum</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <!--<li><a href="#">Forum</a></li>-->
+            <li><a href="#contact">Contact Us</a></li>
 
             {% if request.user.is_authenticated %}
 
@@ -94,10 +94,14 @@
           <div class="feature">
             <div class="feature-title">Medical Care</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              You can consult the desired doctor by making an appointment.
+                You can buy a plethora of medical products as well as
+              
+                track your menstrual cycle
+              </ul>
+              
+                
+              
             </div>
           </div>
         </div>
@@ -105,10 +109,7 @@
           <div class="feature-diff">
             <div class="feature-title">Mental Health</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              You can consult the desired psychiatrist by making an appointment
             </div>
           </div>
           <img class="feature-img-diff" src="{% static 'images/landing/mental.png'  %}" />
@@ -118,10 +119,8 @@
           <div class="feature">
             <div class="feature-title">Legal Services</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              You can consult the desired lawyer by making an appointment
+and browse through women-related laws
             </div>
           </div>
         </div>
@@ -129,15 +128,14 @@
           <div class="feature-diff">
             <div class="feature-title">YouFem Store</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              YouFem Store offers a plethora of products for women. Excellent quality personal hygiene 
+products, healthcare products, and medicines will be available at the best prices.
+
             </div>
           </div>
           <img class="feature-img-diff" src="{% static 'images/landing/shopping.png'  %}" />
         </div>
-        <div class="service">
+        <!--<div class="service">
           <img
             class="feature-img"
             src="{% static 'images/landing/forum-png-free-download.png'  %}"
@@ -151,7 +149,7 @@
               iaculis donec phasellus.
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>
     <!-------------------------------------------------------------Team------------------------------------------------------------------>
@@ -225,7 +223,7 @@
       </div>
     </section>
     <!-------------------------------------------------------------Contact------------------------------------------------------------------>
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <div class="contact">
         <div class="title"><span>Contact Us</span></div>
         <div class="container">
