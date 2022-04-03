@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+#cart-items{
+	color: #fff;
+  background-color: #fff;
+}
+
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
   width: 8px;

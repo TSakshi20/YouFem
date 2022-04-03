@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>YouFem</title>
-    <link rel="stylesheet" href="{% static "css/mentalL.css" %}" />
+    <link rel="stylesheet" href="{% static 'css/mentalL.css' %}">
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -27,7 +27,7 @@
           </div>
           <ul class="links">
             <li>
-              <a href="#">Medical Care</a>
+              <a href="{% url 'medical' %}">Medical Care</a>
               <i class="bx bxs-chevron-down medical-arrow arrow"></i>
               <ul class="medical-sub-menu sub-menu">
                 <li><a href="#">Consult Doctor</a></li>
@@ -36,7 +36,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">Legal Services</a>
+              <a href="{%url 'legal' %}">Legal Services</a>
               <i class="bx bxs-chevron-down legal-arrow arrow"></i>
               <ul class="legal-sub-menu sub-menu">
                 <li><a href="#">Consult Lawyer</a></li>
@@ -44,7 +44,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">Mental Health</a>
+              <a href="{%url 'mental'%}">Mental Health</a>
               <i class="bx bxs-chevron-down mental-arrow arrow"></i>
               <ul class="mental-sub-menu sub-menu">
                 <li><a href="#">Consult Psychiatrist</a></li>
@@ -52,9 +52,25 @@
               </ul>
             </li>
 
-            <li><a href="#">Forum</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li id="login-signup"><a href="#">Login/SignUp</a></li>
+            <!--<li><a href="#">Forum</a></li>-->
+            <li><a href="#contact">Contact Us</a></li>
+
+            {% if request.user.is_authenticated %}
+
+            <li>
+              <a href="#">{{request.user}}</a>
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="{%url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+
+            
+
+            {% else %}
+            <li id="login-signup"><a href="{%url 'register-user' %}">Login/SignUp</a></li>
+            {% endif %}
+
           </ul>
         </div>
       </div>
@@ -130,7 +146,7 @@
       </div>
     </section>
     <!-------------------------------------------------------------Contact------------------------------------------------------------------>
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <div class="contact">
         <div class="title"><span>Contact Us</span></div>
         <div class="container">

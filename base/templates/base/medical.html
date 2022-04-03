@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>YouFem</title>
-    <link rel="stylesheet" href="{% static "css/medicalL.css" %}" />
+    <link rel="stylesheet" href="{% static 'css/medicalL.css' %}">
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -27,7 +27,7 @@
           </div>
           <ul class="links">
             <li>
-              <a href="#">Medical Care</a>
+              <a href="{% url 'medical' %}">Medical Care</a>
               <i class="bx bxs-chevron-down medical-arrow arrow"></i>
               <ul class="medical-sub-menu sub-menu">
                 <li><a href="#">Consult Doctor</a></li>
@@ -36,7 +36,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">Legal Services</a>
+              <a href="{%url 'legal' %}">Legal Services</a>
               <i class="bx bxs-chevron-down legal-arrow arrow"></i>
               <ul class="legal-sub-menu sub-menu">
                 <li><a href="#">Consult Lawyer</a></li>
@@ -44,7 +44,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">Mental Health</a>
+              <a href="{%url 'mental'%}">Mental Health</a>
               <i class="bx bxs-chevron-down mental-arrow arrow"></i>
               <ul class="mental-sub-menu sub-menu">
                 <li><a href="#">Consult Psychiatrist</a></li>
@@ -52,9 +52,25 @@
               </ul>
             </li>
 
-            <li><a href="#">Forum</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li id="login-signup"><a href="#">Login/SignUp</a></li>
+            <!--<li><a href="#">Forum</a></li>-->
+            <li><a href="#contact">Contact Us</a></li>
+
+            {% if request.user.is_authenticated %}
+
+            <li>
+              <a href="#">{{request.user}}</a>
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="{%url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+
+            
+
+            {% else %}
+            <li id="login-signup"><a href="{%url 'register-user' %}">Login/SignUp</a></li>
+            {% endif %}
+
           </ul>
         </div>
       </div>
@@ -63,7 +79,7 @@
     <header class="header">
       <div class="heading">
         <div class="heading-main">
-          Medical wala page<span class="fem">vfhfggjgj</span>
+          Women’s health needs to be front and center – it often isn’t, but it needs to be.<span class="fem">Medicines cure diseases but only doctors can cure patients!</span>
         </div>
         <div class="sub-heading fem">Giving Wings to every Woman</div>
       </div>
@@ -78,12 +94,11 @@
           <div class="feature-diff">
             <div class="feature-title">YouFem Store</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              YouFem Store offers a plethora of products for women. Excellent quality personal hygiene 
+products, healthcare products, and medicines will be available at the best prices.
             </div>
-            <button class="btn">Store</button>
+            <a href="{% url 'store' %}">
+            <button class="btn">Store</button></a>
           </div>
           <img class="feature-img-diff" src="./assests/shopping.png" />
         </div>
@@ -95,10 +110,7 @@
           <div class="feature">
             <div class="feature-title">Period Tracker</div>
             <div class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit
-              nascetur risus, laoreet etiam. Non dignissim imperdiet a sed. Nibh
-              lacus, neque at elementum velit diam ut sapien. Venenatis eget
-              iaculis donec phasellus.
+              Period tracker offers a nice visual display and helps in keeping track of the menstrual cycle
             </div>
             <button class="btn">Tracker</button>
           </div>
@@ -164,7 +176,7 @@
       </div>
     </section>
     <!-------------------------------------------------------------Contact------------------------------------------------------------------>
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <div class="contact">
         <div class="title"><span>Contact Us</span></div>
         <div class="container">
