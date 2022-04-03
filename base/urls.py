@@ -14,4 +14,10 @@ urlpatterns = [
     path('medical/',views.medical,name="medical"),
     path('mental/',views.mental,name="mental"),
     path('legal/',views.legal,name="legal"),
+    path('store/', views.store, name="store"),
+	path('cart/', views.cart, name="cart"),
+	path('checkout/', views.checkout, name="checkout"),
+	#path('prod_des/', views.productDes, name="prod_des"),
+	path('update_item/', views.updateItem, name="update_item"),
+	path('process_order/', views.processOrder, name="process_order"),
 ]
