@@ -188,6 +188,11 @@ def registerUser(request):
             user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
             user.save()
             print("user created");
+            Customer.objects.create(
+                user=user,
+                name=first_name,
+                email=email
+            )
 
         else:
             print('password not matching')
@@ -268,6 +273,9 @@ def store(request):
 	#	items=[]
 	#	order={'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
 	#	cartItems=order['get_cart_items']
+    #orders = Order.objects.all()
+	
+#    customers = Customer.objects.all()
 
     customer=request.user.customer
     order, created=Order.objects.get_or_create(customer=customer, complete=False)

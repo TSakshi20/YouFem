@@ -110,10 +110,10 @@
             shippingInfo.state = form.state.value
             shippingInfo.zipcode = form.zipcode.value
         }
-        if (user == 'AnonymousUser'){
-	    		userFormData.name = form.name.value
-	    		userFormData.email = form.email.value
-	    	}
+        // if (user == 'AnonymousUser'){
+	    // 		userFormData.name = form.name.value
+	    // 		userFormData.email = form.email.value
+	    // 	}
 
         var url = '/process_order/'
         fetch(url,{
