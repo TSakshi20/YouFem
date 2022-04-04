@@ -19,36 +19,36 @@ import json
 #     return render(request,'base/home.html')
 
 
-def registerUser(request):
+# def registerUser(request):
     
 
 
-    if request.method=='POST':
-        first_name=request.POST.get('first_name')
-        last_name=request.POST.get('last_name')
-        email=request.POST.get('email')
-        username=request.POST.get('email')
-        password1=request.POST.get('password1')
-        password2=request.POST.get('password2')
+#     if request.method=='POST':
+#         first_name=request.POST.get('first_name')
+#         last_name=request.POST.get('last_name')
+#         email=request.POST.get('email')
+#         username=request.POST.get('email')
+#         password1=request.POST.get('password1')
+#         password2=request.POST.get('password2')
         
-        if password1 == password2:
-            user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
-            user.save()
-            print("user created");
-            Customer.objects.create(
-                user=user,
-                name=first_name,
-                email=email
-            )
+#         if password1 == password2:
+#             user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
+#             user.save()
+#             print("user created");
+#             Customer.objects.create(
+#                 user=user
+#                 #name=first_name
+#                 #email=email
+#             )
 
-        else:
-            print('password not matching')
-            #messages.error(request,'Passwords dont match !!')
-        return redirect('landing')
+#         else:
+#             print('password not matching')
+#             #messages.error(request,'Passwords dont match !!')
+#         return redirect('landing')
         
         
 
-    return render(request,'base/register-user.html')
+#     return render(request,'base/register-user.html')
 
 class customer_register(CreateView):
     model = User

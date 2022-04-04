@@ -23,21 +23,21 @@ class User(AbstractUser):
 class Customer(models.Model):
 	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
 	#name = models.CharField(max_length=200, null=True)
-	#email = models.CharField(max_length=200)
+	#email = models.CharField(max_length=200, default=)
 
 	def __str__(self):
-		return self.name
+	 	return self.user.first_name
 
 class Professional(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     experience = models.CharField(max_length=20,null=True)
     contact = models.CharField(max_length=20,null=True)
     profession = models.CharField(max_length=20)
-    profile_pic=models.ImageField(null=True,blank=True);
+    profile_pic=models.ImageField(null=True,blank=True)
     password=models.CharField(max_length=30,blank=True)
 
-    # def __str__(self):
-    #     return (self.pfname+" " +self.plname)
+    def __str__(self):
+         return (self.user.first_name+self.user.last_name)
 
 
 
