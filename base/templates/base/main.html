@@ -51,7 +51,7 @@ const csrftoken = getToken('csrftoken');
             <ul class="medical-sub-menu sub-menu">
               <li><a href="#">Consult Doctor</a></li>
               <li><a href="#">YouFem Store</a></li>
-              <li><a href="#">Period Tracker</a></li>
+              <!-- <li><a href="#">Period Tracker</a></li> -->
             </ul>
           </li>
           <li>
@@ -72,7 +72,13 @@ const csrftoken = getToken('csrftoken');
           </li>
 
           <!--<li><a href="#">Forum</a></li>-->
-          <li><a href="#contact">Contact Us</a></li>
+          <!-- <li><a href="#contact">Contact Us</a></li> -->
+          <li>
+            <a href="{% url 'cart' %}">
+              <img  id="cart-icon" src="{% static 'images/cartimage.png' %}">
+              
+          </a>
+          <p id="cart-total">{{cartItems}}</p></li>
 
           {% if request.user.is_authenticated %}
 
@@ -90,12 +96,7 @@ const csrftoken = getToken('csrftoken');
           <li id="login-signup"><a href="{%url 'register-user' %}">Login/SignUp</a></li>
           {% endif %}
 
-        <li>
-        <a href="{% url 'cart' %}">
-          <img  id="cart-icon" src="{% static 'images/cartimage.png' %}">
-          
-      </a>
-      <p id="cart-total">{{cartItems}}</p></li>
+        
       
       </ul>
       </div>
