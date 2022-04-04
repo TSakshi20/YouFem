@@ -6,7 +6,8 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .forms import ProfessionalForm
+from django.views.generic import CreateView
+from .forms import ProfessionalForm,CustomerSignUpForm,EmployeeSignUpForm
 from django.http import JsonResponse
 from .models import *
 import datetime
@@ -16,6 +17,59 @@ import json
 
 # def home(request):
 #     return render(request,'base/home.html')
+
+
+def registerUser(request):
+    
+
+
+    if request.method=='POST':
+        first_name=request.POST.get('first_name')
+        last_name=request.POST.get('last_name')
+        email=request.POST.get('email')
+        username=request.POST.get('email')
+        password1=request.POST.get('password1')
+        password2=request.POST.get('password2')
+        
+        if password1 == password2:
+            user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
+            user.save()
+            print("user created");
+            Customer.objects.create(
+                user=user,
+                name=first_name,
+                email=email
+            )
+
+        else:
+            print('password not matching')
+            #messages.error(request,'Passwords dont match !!')
+        return redirect('landing')
+        
+        
+
+    return render(request,'base/register-user.html')
+
+class customer_register(CreateView):
+    model = User
+    form_class = CustomerSignUpForm
+    template_name = '../templates/base/register-user.html'
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('landing')
+
+
+class prof_register(CreateView):
+    model = User
+    form_class = EmployeeSignUpForm
+    template_name = '../templates/base/register-prof.html'
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('landing')
 
 
 def landing(request):
@@ -172,36 +226,7 @@ def registerProf(request):
         
     # return render(request,'base/register-prof.html')
 
-def registerUser(request):
-    
 
-
-    if request.method=='POST':
-        first_name=request.POST.get('first_name')
-        last_name=request.POST.get('last_name')
-        email=request.POST.get('email')
-        username=request.POST.get('email')
-        password1=request.POST.get('password1')
-        password2=request.POST.get('password2')
-        
-        if password1 == password2:
-            user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
-            user.save()
-            print("user created");
-            Customer.objects.create(
-                user=user,
-                name=first_name,
-                email=email
-            )
-
-        else:
-            print('password not matching')
-            #messages.error(request,'Passwords dont match !!')
-        return redirect('landing')
-        
-        
-
-    return render(request,'base/register-user.html')
 
 
 

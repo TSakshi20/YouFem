@@ -7,8 +7,10 @@ urlpatterns = [
 
     path('login/',views.loginPage,name="login"),
     path('logout/',views.logoutUser,name="logout"),
-    path('register-prof/',views.registerProf,name="register-prof"),
-    path('register-user/',views.registerUser,name="register-user"),
+    # path('register-prof/',views.registerProf,name="register-prof"),
+    # path('register-user/',views.registerUser,name="register-user"),
+    path('register-user/',views.customer_register.as_view(),name="register-user"),
+    path('register-prof/',views.prof_register.as_view(),name="register-prof"),
     path('',views.landing,name="landing"),
     path('laws/<str:pk>/',views.laws,name="laws"),
     path('medical/',views.medical,name="medical"),
