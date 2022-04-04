@@ -1,22 +1,47 @@
 from statistics import mode
 from django.db import models
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+
+# Create your models here.
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_employee = models.BooleanField(default=False)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    
+
+# class Customer(models.Model):
+#     user = models.OneToOneField(User, on_delete = models.CASCADE, primary_key = True)
+#     #phone_number = models.CharField(max_length=20)
+#     #location = models.CharField(max_length=20)
+    
+
+class Customer(models.Model):
+	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+	#name = models.CharField(max_length=200, null=True)
+	#email = models.CharField(max_length=200)
+
+	def __str__(self):
+		return self.name
 
 class Professional(models.Model):
-    peid = models.CharField(max_length=50,primary_key=True)
-    pfname = models.CharField(max_length=30)
-    plname = models.CharField(max_length=30, null=True, blank=True)
-    experience = models.IntegerField()
-    contact = models.IntegerField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    experience = models.CharField(max_length=20,null=True)
+    contact = models.CharField(max_length=20,null=True)
     profession = models.CharField(max_length=20)
     profile_pic=models.ImageField(null=True,blank=True);
     password=models.CharField(max_length=30,blank=True)
 
-    def __str__(self):
-        return (self.pfname+" " +self.plname)
+    # def __str__(self):
+    #     return (self.pfname+" " +self.plname)
+
+
+
+
 
 
 
@@ -50,13 +75,7 @@ class LawFaq(models.Model):
 
 
     
-class Customer(models.Model):
-	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-	name = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200)
 
-	def __str__(self):
-		return self.name
 
 
 class Product(models.Model):

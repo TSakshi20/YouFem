@@ -1,4 +1,4 @@
-<!Doctype html>
+<!--<!Doctype html>
 {%load static %}
 <html lang="en" dir="litr">
 <head>
@@ -15,6 +15,38 @@
  <select id="usertype" name="usertype">
 	<option value="user">User</option>
 	<option value="admin">Admin</option>
+	<option value="Professional">Professional</option>
+</select>
+ <input type="password" name="password" placeholder="Password">
+ <input type="submit" name="" value="Login">
+ <!--p style="color:white;"--><!--input type="checkbox" name="" checked ="checked" color="black"-->  
+ <!--<a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>>
+ <a href="{%url 'register-prof' %}" >SIGN UP (Professional)</a></p>>
+</form>
+</body>
+</html>-->
+
+
+
+
+
+<!Doctype html>
+{%load static %}
+<html lang="en" dir="litr">
+<head>
+	<meta charset="utf-8">
+	<title>Login Form</title>
+	<iframe width="0" height="0" src="" frameborder="0" allowfullscreen></iframe>
+	<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}">
+</head>
+<body>
+	<form class="box" action="" method="POST">
+		{% csrf_token %}
+ <h1>Login</h1>
+ <input type="text" name="username" placeholder="Email" required=""> 
+ <select id="usertype" name="usertype">
+	<option value="user">User</option>
+	<!--<option value="admin">Admin</option>-->
 	<option value="Professional">Professional</option>
 </select>
  <input type="password" name="password" placeholder="Password">

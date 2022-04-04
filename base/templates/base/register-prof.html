@@ -1,3 +1,8 @@
+
+
+
+
+
 <!Doctype html>
 {%load static %}
 <html lang="en" dir="litr">
@@ -8,31 +13,18 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}">
 </head>
 <body>
-	<form class="box" action="" method='POST'>
+	<form action="{% url 'register-prof' %}" method="POST" enctype="multipart/form-data" novalidate>
         {% csrf_token %}
- <h1>Register</h1>
- {%for field in form %}
- <div>
-    <label for="{{field.label}}">{{field.label}}</label> 
-    
-    {{field}}
-    <!--<input id="room_name" name="room_name" type="text" placeholder="E.g. Mastering Python + Django" />-->
-</div>
-{% endfor %}
- <!--<input type="text" name="first_name" placeholder="First name" required="">
- <input type="text" name="" placeholder="Last name" required="">
- <input type="text" name="email" placeholder="Email" required="">
- <input type="text" name="experience" placeholder="Experience" required="">
- <input type="text" name="profession" placeholder="Profession" required="">
- <input type="text" name="contact" placeholder="Contact No" required="">
- <h3 >Upload Photo:</h3>
- <input type="file" name="f" id="img" placeholder="Photo" accept="image/png,image/jpeg,image/bmp,image/gif" >
- <input type="password" name="password1" placeholder="Password" required="">
- <input type="password" name="password2" placeholder="Retype Password" required="">-->
- <input type="submit" name="" value="Register">
- <!--p style="color:white;"--><!--input type="checkbox" name="" checked ="checked" color="black"-->
- <a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>>  
- <a href="{%url 'login' %}" >LOGIN</a></p>>
-</form>
+           {% for field in form.visible_fields %}
+             <div class="form-group">
+                 {{ field.label_tag }}
+                    {{field}}
+                      {% for error in field.errors %}
+                        <span style="color:red">{{ error }}</span>
+                      {% endfor %}
+           {% endfor %}
+               <input type="submit" value="Register" class="btn btn-block btn-primary">
+             </div>
+      </form>
 </body>
 </html>
