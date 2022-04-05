@@ -282,6 +282,9 @@ def laws(request,pk):
 def medical(request):
     return render(request,'base/medical.html')
 
+def legalpage(request):
+    return render(request,'base/legal-page.html')    
+
 
 def mental(request):
     return render(request,'base/mental.html')

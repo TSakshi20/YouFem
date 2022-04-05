@@ -16,6 +16,7 @@ urlpatterns = [
     path('medical/',views.medical,name="medical"),
     path('mental/',views.mental,name="mental"),
     path('legal/',views.legal,name="legal"),
+    path('legalpage/',views.legalpage,name="legalpage"),
     path('store/', views.store, name="store"),
 	path('cart/', views.cart, name="cart"),
 	path('checkout/', views.checkout, name="checkout"),

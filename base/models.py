@@ -73,7 +73,13 @@ class LawFaq(models.Model):
     def __str__(self):
         return (self.question[0:50])
 
+class PsychoDisorders(models.Model):
+    #topicid=models.IntegerField(primary_key=True)
+    pdname=models.CharField(max_length=50)
 
+
+    def __str__(self):
+        return (self.pdname)
     
 
 
