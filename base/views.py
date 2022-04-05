@@ -12,6 +12,7 @@ from django.http import JsonResponse
 from .models import *
 import datetime
 import json
+from django.views.decorators.cache import cache_control
 
 # Create your views here.
 
@@ -74,6 +75,7 @@ class prof_register(CreateView):
 
 def landing(request):
     return render(request,'base/landing.html')
+
 
 
 def loginPage(request):
@@ -229,7 +231,7 @@ def registerProf(request):
 
 
 
-
+@login_required(login_url='login')
 def legal(request):
 
     professionals= Professional.objects.all()
@@ -272,17 +274,19 @@ def legal(request):
         return render(request,'base/legal.html',context)
 
 
-
+@login_required(login_url='login')
 def laws(request,pk):
     legalSubTopic= LegalSubTopic.objects.get(id=pk)
     lawFaqs=LawFaq.objects.all()
     context ={'legalSubTopic':legalSubTopic,'lawFaqs':lawFaqs}
     return render(request,'base/laws.html',context)
 
+
+@login_required(login_url='login')
 def medical(request):
     return render(request,'base/medical.html')
 
-
+@login_required(login_url='login')
 def mental(request):
     return render(request,'base/mental.html')
 

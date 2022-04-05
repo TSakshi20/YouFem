@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL ='base.User'
+#LOGOUT_REDIRECT_URL = "landing"
 
 # Application definition
 
