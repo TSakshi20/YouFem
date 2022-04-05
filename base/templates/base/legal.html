@@ -41,6 +41,14 @@
 	          	<li class="nav-item"><a href="#KnowRights" class="nav-link">Know Rights</a></li>
 	          	<li class="nav-item"><a href="{%url 'medical'%}" class="nav-link">Medical Health</a></li>
 	          	<li class="nav-item"><a href="{%url 'mental'%}" class="nav-link">Mental Health</a></li>
+				{% if request.user.is_authenticated %}
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="{%url 'landing' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{request.user.first_name}}</a>
+              	<div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
+              </div>
+				</li>
+				{%endif%}
 	        	</ul>
 	      </div>
 		</div>
@@ -325,7 +333,7 @@
         				<div class="menu-entry">
 							<a href="#" class="img" style="background-image: url({{prof.profile_pic.url}});"></a>
     						<div class="text text-center pt-4">
-    							<h3><a href="#">{{prof.pfname}} {{prof.plname}}</a></h3>
+    							<h3><a href="#">{{prof.user.first_name}} {{prof.user.last_name}}</a></h3>
     							<p>Experience : {{prof.experience}} years</p>							
 								<!-- Button trigger modal -->
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
