@@ -72,7 +72,7 @@ class prof_register(CreateView):
         login(self.request, user)
         return redirect('landing')
 
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def landing(request):
     return render(request,'base/landing.html')
 
@@ -230,7 +230,7 @@ def registerProf(request):
 
 
 
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def legal(request):
 
@@ -274,6 +274,7 @@ def legal(request):
         return render(request,'base/legal.html',context)
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def laws(request,pk):
     legalSubTopic= LegalSubTopic.objects.get(id=pk)
@@ -282,15 +283,18 @@ def laws(request,pk):
     return render(request,'base/laws.html',context)
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def medical(request):
     return render(request,'base/medical.html')
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def mental(request):
     return render(request,'base/mental.html')
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def store(request):
 	#if request.user.is_authenticated:
