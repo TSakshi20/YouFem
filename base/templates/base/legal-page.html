@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YouFem</title>
+
+    <link rel="stylesheet" href="{% static 'css/legal.css' %}" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!--------------------------------------------------------------NAVBAR------------------------------------------------------------------>
+    <nav>
+      <div class="navbar">
+        <i class="bx bx-menu"></i>
+        <div class="logo">
+          <a href="#">You<span class="fem">Fem</span></a>
+        </div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">You<span class="fem">Fem</span></span>
+            <i class="bx bx-x"></i>
+          </div>
+          <ul class="links">
+            <li>
+              <a href="#">Medical Care</a>
+              <i class="bx bxs-chevron-down medical-arrow arrow"></i>
+              <ul class="medical-sub-menu sub-menu">
+                <li><a href="#">Consult Doctor</a></li>
+                <li><a href="#">YouFem Store</a></li>
+                <!-- <li><a href="#">Period Tracker</a></li> -->
+              </ul>
+            </li>
+            <li>
+              <a href="#">Legal Services</a>
+              <i class="bx bxs-chevron-down legal-arrow arrow"></i>
+              <ul class="legal-sub-menu sub-menu">
+                <li><a href="#">Consult Lawyer</a></li>
+                <li><a href="#">Know Your Rights</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Mental Health</a>
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="#">Consult Psychiatrist</a></li>
+                <li><a href="#">Mental Health Quiz</a></li>
+              </ul>
+            </li>
+
+            <!-- <li><a href="#">Forum</a></li> -->
+            <li><a href="#">Contact Us</a></li>
+            <li id="login-signup"><a href="#">Login/SignUp</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-------------------------------------------------------------HEADER------------------------------------------------------------------>
+    <header class="header">
+      <div class="img-slider">
+        <div class="slide active">
+          <img src="./assests/carousel_bg_1.jpg" alt="" />
+          <div class="info">
+            <h2>EMPOWERING WOMEN OF INDIA</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./assests/carousel_bg_2.jpg" alt="" />
+          <div class="info">
+            <h2>BRIDGING GAP BETWEEN LAWS IN INDIA AND COMMON PEOPLE</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./assests/carousel3.jpg" alt="" />
+          <div class="info">
+            <h2>MAKING LAWS FRIENDLY AND LESS INTIMIDATING</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <div class="btn active"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <!-- <div class="btn"></div>
+          <div class="btn"></div> -->
+        </div>
+      </div>
+    </header>
+
+    <!-------------------------------------------------------------Services------------------------------------------------------------------>
+    <section class="services-section">
+      <div class="services">
+        <div class="title"><span>Know Your Rights</span></div>
+        <div class="rights-info">
+          <div>
+            Laws in India are drafted in an extremely complex legal language. We
+            also have a complicated legal process and multiple laws for same
+            rights. Although the laws are made for the benefit of people , the
+            feel alientated. There are a lot of topics which includes different
+            subtopics. We explain the laws in a simple manner making the process
+            less intimidating.
+          </div>
+          <img src="./assests/laws.png" />
+        </div>
+        <div class="topics">
+          <button class="topic1 active">Child Related</button>
+          <button class="topic2">Sexual Harassment</button>
+          <button class="topic3">Violence At Home</button>
+          <button class="topic4">Marriage and Divorce</button>
+        </div>
+        <div class="laws">
+          <div class="child-laws">
+            <div class="law">Maternity</div>
+            <div class="law">Abortion</div>
+            <div class="law">Surrogacy</div>
+          </div>
+          <div class="sexual-harassment">
+            <div class="law">Rape</div>
+            <div class="law">Stalking</div>
+            <div class="law">Molestation</div>
+            <div class="law">Eve-Teasing</div>
+          </div>
+          <div class="domestic-violence">
+            <div class="law">Dowry Harassment</div>
+            <div class="law">Cruelty</div>
+            <div class="law">Domestic Violence</div>
+            <div class="law">asf</div>
+          </div>
+          <div class="marriage-divorce">
+            <div class="law">Hindu Marriage</div>
+            <div class="law">Hindu Divorce</div>
+            <div class="law">Hindu Separation</div>
+            <div class="law">Hindu Maintenance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------------------------------------Team------------------------------------------------------------------>
+    <section class="team-section">
+      <div class="team">
+        <div class="title"><span>Consult With Best Lawyers</span></div>
+        <p class="legal-info">
+          Book an appointment with the Lawyers. Fill the form with your queries.
+          Lawyers will help you in solving your queries.
+        </p>
+        <div class="lawyers">
+          <div class="lawyer">
+            <img src="./assests/doc-1.jpg" alt="" />
+            <div class="name">SAURABH SINGH</div>
+            <div class="expericence">Experience</div>
+            <button class="book-appointment">Book an appointment</button>
+          </div>
+          <div class="lawyer">
+            <img src="./assests/doc-2.jpg" alt="" />
+            <div class="name">ABHINAV JINDAL</div>
+            <div class="expericence">Experience</div>
+            <button class="book-appointment">Book an appointment</button>
+          </div>
+          <div class="lawyer">
+            <img src="./assests/doc-3.png" alt="" />
+            <div class="name">SHWETA MITTAL</div>
+            <div class="expericence">Experience</div>
+            <button class="book-appointment">Book an appointment</button>
+          </div>
+          <div class="lawyer">
+            <img src="./assests/doc-4.jpg" alt="" />
+            <div class="name">AMIT MALHOTRA</div>
+            <div class="expericence">Experience</div>
+            <button class="book-appointment">Book an appointment</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------------------------------------Contact------------------------------------------------------------------>
+    <section class="contact-section">
+      <div class="contact">
+        <div class="title"><span>Contact Us</span></div>
+        <div class="container">
+          <div class="content">
+            <div class="left-side">
+              <div class="address details">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="topic">Address</div>
+                <div class="text-one">abc ,xyz</div>
+                <div class="text-two">Delhi, India</div>
+              </div>
+              <div class="phone details">
+                <i class="fas fa-phone-alt"></i>
+                <div class="topic">Phone</div>
+                <div class="text-one">+0098 9893 5647</div>
+                <div class="text-two">+0096 3434 5678</div>
+              </div>
+              <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topic">Email</div>
+                <div class="text-one">youfem@gmail.com</div>
+                <div class="text-two">info.youfem@gmail.com</div>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="topic-text">Send us a message</div>
+              <p>
+                If you have any queries or wanna contact us drop a mail to us💙
+              </p>
+              <form action="#">
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your email" />
+                </div>
+                <div class="input-box message-box">
+                  <input type="text" placeholder="Enter your message" />
+                </div>
+                <div class="button">
+                  <input type="button" value="Send Now" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------------------------------------------Footer------------------------------------------------------------------>
+    <footer>
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social_icon">
+        <li>
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </li>
+        <li>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+      <p>&copy; YouFem | All Rights Reserved</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="{% static 'js/legal.js' %}"></script>
+  </body>
+</html>

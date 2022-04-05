@@ -297,11 +297,9 @@ products, healthcare products, and medicines will be available at the best price
         </li>
       </ul>
       <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'medical' %}">Medical Care</a></li>
+        <li><a href="{%url 'legal' %}">Legal Services</a></li>
+        <li><a href="{%url 'mental' %}">Mental Health</a></li>
       </ul>
       <p>&copy; YouFem | All Rights Reserved</p>
     </footer>
@@ -313,6 +311,7 @@ products, healthcare products, and medicines will be available at the best price
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script src="{% static "js/script.js" %}"></script>
+
+    <script src="{% static 'js/landing.js' %}"></script>
   </body>
 </html>

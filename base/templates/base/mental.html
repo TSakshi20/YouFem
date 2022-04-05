@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>YouFem</title>
-    <link rel="stylesheet" href="{% static 'css/mentalL.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mentalL.css' %}" />
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -65,12 +65,11 @@
               </ul>
             </li>
 
-            
-
             {% else %}
-            <li id="login-signup"><a href="{%url 'register-user' %}">Login/SignUp</a></li>
+            <li id="login-signup">
+              <a href="{%url 'register-user' %}">Login/SignUp</a>
+            </li>
             {% endif %}
-
           </ul>
         </div>
       </div>
@@ -79,13 +78,15 @@
     <header class="header">
       <div class="heading">
         <div class="heading-main">
-          <span class="neon">Talk. Resolve. Heal.</span><br>
+          <span class="neon">Talk. Resolve. Heal.</span><br />
           Online Counselling Therapy With Top Psychologists
-          
         </div>
         <div class="sub-heading fem">Anytime, Anywhere, Any device.</div>
       </div>
-      <img class="header-img" src=" {% static 'images/landing/mental.png'  %}" />
+      <img
+        class="header-img"
+        src=" {% static 'images/landing/mental.png'  %}"
+      />
     </header>
     <!-------------------------------------------------------------Team------------------------------------------------------------------>
     <section class="team-section">
@@ -220,11 +221,9 @@
         </li>
       </ul>
       <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'medical' %}">Medical Care</a></li>
+        <li><a href="{%url 'legal' %}">Legal Services</a></li>
+        <li><a href="{%url 'mental' %}">Mental Health</a></li>
       </ul>
       <p>&copy; YouFem | All Rights Reserved</p>
     </footer>
@@ -236,6 +235,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script src="script.js"></script>
+    <script src="{% static 'js/landing.js' %}"></script>
   </body>
 </html>
