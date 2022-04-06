@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding-bottom: 0;
     font-family: sans-serif;
     background-image: url("/static/images/login.jpg");
     background-size: cover;
@@ -8,14 +8,15 @@ body {
 
 .box {
     width: 400px;
-    padding: 10px;
+    padding: 0px 10px;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: black;
     text-align: center;
     box-shadow: 12px 15px #bfbebb;
+    padding-bottom: 5px;
 }
 
 .box h1 {
@@ -29,8 +30,9 @@ body {
 
 .box label {
     color: white;
+    font-size: 15px;
+    padding: 10px 10px;
 }
-
 .box input[type="text"],
 input[type="number"],
 .box input[type="password"],
@@ -95,6 +97,6 @@ a:hover {
 .box h3 {
     color: white;
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: 70;
     font-size: 15px;
 }
