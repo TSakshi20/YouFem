@@ -1,4 +1,4 @@
-/* Googlefont Poppins CDN Link */
+/* medicalL.css Googlefont Poppins CDN Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -256,14 +256,36 @@ nav .navbar .links li:hover .mental-sub-menu {
   margin-left: 15px;
 }
 .heading-main {
-  color: #fff;
+  /*color: #fff;
+  
+  font-weight: bolder;*/
+  color: white;
   font-size: 2.5rem;
-  font-weight: bolder;
+  -webkit-text-stroke: 1px #F8F8F8;
+  text-shadow: 0px 2px 4px blue;
 }
 .sub-heading {
-  color: #ffca18;
+  color: #82318d;
   font-size: 2rem;
   font-weight: bold;
+  animation: 2s anim-lineUp ease-out infinite;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 .header-img {
   width: 35%;

@@ -10,11 +10,12 @@
 	<meta charset="utf-8">
 	<title>Register Form</title>
 	<iframe width="0" height="0" src="" frameborder="0" allowfullscreen></iframe>
-	<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 </head>
 <body>
-	<form action="{% url 'register-prof' %}" method="POST" enctype="multipart/form-data" novalidate>
+	<form class="box" action="{% url 'register-prof' %}" method="POST" enctype="multipart/form-data" novalidate>
         {% csrf_token %}
+        <h1>Professional Registeration</h1>
            {% for field in form.visible_fields %}
              <div class="form-group">
                  {{ field.label_tag }}
@@ -24,7 +25,9 @@
                       {% endfor %}
            {% endfor %}
                <input type="submit" value="Register" class="btn btn-block btn-primary">
+               
              </div>
       </form>
+      <!--a href="{%url 'login' %}" ><button class="login">Login</button></a>-->
 </body>
 </html>
