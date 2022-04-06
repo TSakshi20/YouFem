@@ -18,7 +18,7 @@
       <div class="navbar">
         <i class="bx bx-menu"></i>
         <div class="logo">
-          <a href="#">You<span class="fem">Fem</span></a>
+          <a href="{%url 'landing' %}">You<span class="fem">Fem</span></a>
         </div>
         <div class="nav-links">
           <div class="sidebar-logo">
@@ -58,7 +58,7 @@
             {% if request.user.is_authenticated %}
 
             <li>
-              <a href="#">{{request.user}}</a>
+              <a href="#">{{request.user.first_name}}</a>
               <i class="bx bxs-chevron-down mental-arrow arrow"></i>
               <ul class="mental-sub-menu sub-menu">
                 <li><a href="{%url 'logout' %}">Logout</a></li>
@@ -168,8 +168,8 @@
               <div class="email details">
                 <i class="fas fa-envelope"></i>
                 <div class="topic">Email</div>
-                <div class="text-one">codinglab@gmail.com</div>
-                <div class="text-two">info.codinglab@gmail.com</div>
+                <div class="text-one">YouFem@gmail.com</div>
+                <div class="text-two">info.YouFem@gmail.com</div>
               </div>
             </div>
             <div class="right-side">

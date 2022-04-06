@@ -319,6 +319,8 @@ def store(request):
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'base/store.html', context)
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
 def cart(request):
 	if request.user.is_authenticated:
 		customer=request.user.customer
@@ -333,6 +335,8 @@ def cart(request):
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'base/cart.html', context)
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
 def checkout(request):
 	if request.user.is_authenticated:
 		customer=request.user.customer

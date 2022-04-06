@@ -30,9 +30,9 @@
                     <div class="form-field">
                         <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
                     </div>
-                    <div class="form-field">
+                    <!-- <div class="form-field">
                         <input class="form-control" type="text" name="country" placeholder="Zip code..">
-                    </div>
+                    </div> -->
                 </div>
 
                 <hr>
@@ -73,10 +73,10 @@
 <script type="text/javascript">
     var shipping = '{{order.shipping}}'
     var total = '{{order.get_cart_total}}'
-    if(shipping=='False')
-    {
-        document.getElementById('shipping-info').innerHTML=''
-    }
+    // if(shipping=='False')
+    // {
+    //     document.getElementById('shipping-info').innerHTML=''
+    // }
     
     var form=document.getElementById('form')
     form.addEventListener('submit', function(e){

@@ -57,7 +57,7 @@ class LegalRight(models.Model):
 class LegalSubTopic(models.Model):
     subtopicname=models.CharField(max_length=50)
     legaltopic=models.ForeignKey(LegalRight,on_delete=models.CASCADE)
-    subtopicimage=models.ImageField(null=True,blank=True);
+    subtopicimage=models.ImageField(null=True,blank=True)
 
     def __str__(self):
         return (self.subtopicname)
@@ -72,6 +72,15 @@ class LawFaq(models.Model):
 
     def __str__(self):
         return (self.question[0:50])
+
+
+class PsychoDisorders(models.Model):
+    #topicid=models.IntegerField(primary_key=True)
+    pdname=models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return (self.pdname)		
 
 
     
