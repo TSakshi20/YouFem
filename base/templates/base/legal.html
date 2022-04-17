@@ -361,7 +361,7 @@
 																<label for="name">Lawyer Name  </label>
 															</div>
 															<div class="form-group">																									
-																<input type="text"  class="form-control" id="name" name="message-profname" value="{{prof.pfname}}"  disabled>
+																<input type="text"  class="form-control" id="name" name="message-profname" value="{{prof.user.first_name}}"  disabled>
 															</div>														
 														</div>
 
@@ -370,7 +370,7 @@
 																<label for="email">Lawyer Email  </label>
 															</div>
 															<div class="form-group ml-md-8">																									
-																<input type="email" class="form-control" id="email" name="message-profemail" value="{{prof.peid}}">
+																<input type="email" class="form-control" id="email" name="message-profemail" value="{{prof.user}}">
 															</div>														
 														</div>
 														<hr>
@@ -485,7 +485,8 @@
 		            		</div>
 		          		</div>
 						  <!--YAHA PASTE KARNA HAI-->
-		          		<div class="col-md-12 d-flex align-items-center">
+		          		
+						  <div class="col-md-12 d-flex align-items-center">
 							<div class="tab-content ftco-animate" id="v-pills-tabContent">
 								<div class="tab-pane fade show active" id="v-pills-0" role="tabpanel" aria-labelledby="v-pills-0-tab">
 		              				<div class="row">
@@ -517,6 +518,7 @@
 														<a href="#" class="menu-img img mb-4" style="background-image: url({{legalSubTopic.subtopicimage.url}});"></a>
 		              									<div class="text">
 		              										<h3><a href="#">{{legalSubTopic}}</a></h3>
+		              										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
 		              										<p><a href="{% url 'laws' legalSubTopic.id  %}" class="btn btn-primary btn-outline-primary">Explore</a></p>
 		              									</div>
 		              								</div>
@@ -528,6 +530,7 @@
 					  			{% endfor %}
 		            		</div>
 		          		</div>
+						  
 		        	</div>
 		      	</div>
 		    </div>
