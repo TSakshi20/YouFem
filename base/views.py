@@ -234,7 +234,8 @@ def registerProf(request):
 @login_required(login_url='login')
 def legal(request):
 
-    professionals= Professional.objects.all()
+    #professionals= Professional.objects.all()
+    professionals= Professional.objects.filter(profession='Lawyer')
     lawyercount=Professional.objects.filter(profession='Lawyer').count()
     legalRightscount=LegalRight.objects.all().count()
     legalSubTopicscount=LegalSubTopic.objects.all().count()
