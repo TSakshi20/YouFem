@@ -287,12 +287,21 @@ def laws(request,pk):
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def medical(request):
-    return render(request,'base/medical.html')
+    professionals= Professional.objects.filter(profession='Doctor')
+    #psychoDisorder = PsychoDisorders.objects.all()
+    context ={'professionals':professionals}
+
+    #return render(request,'base/mental.html', context)
+    return render(request,'base/medical.html', context)
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required(login_url='login')
 def mental(request):
-    return render(request,'base/mental.html')
+    professionals= Professional.objects.filter(profession='Psychologist')
+    psychoDisorder = PsychoDisorders.objects.all()
+    context ={'professionals':professionals,'psychoDisorder':psychoDisorder}
+
+    return render(request,'base/mental.html', context)
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
