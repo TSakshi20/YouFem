@@ -70,7 +70,7 @@ class prof_register(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('landing')
+        return redirect('professional-profile')
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def landing(request):
@@ -112,10 +112,10 @@ def loginPage(request):
 
             if usertype == 'admin':
                 return redirect('./admin/')
-            elif usertype == 'user':
+            elif usertype == 'User':
                 return redirect('landing')
-            elif usertype == 'professional':
-                return redirect('landing')
+            elif usertype == 'Professional':
+                return redirect('professional-profile')
         else:
             messages.error(request,'Username or password does not exist')
 
@@ -129,7 +129,7 @@ def loginProf(request):
     page='login'
 
     if request.user.is_authenticated:
-        return redirect('landing')
+        return redirect('professional-profile')
 
     if request.method=="POST":
         peid=request.POST.get('username').lower()
@@ -163,10 +163,10 @@ def loginProf(request):
 
             if usertype == 'admin':
                 return redirect('./admin/')
-            elif usertype == 'user':
+            elif usertype == 'User':
                 return redirect('landing')
-            elif usertype == 'professional':
-                return redirect('landing')
+            elif usertype == 'Professional':
+                return redirect('professional-profile')
         else:
             messages.error(request,'Username or password does not exist')
 
@@ -195,7 +195,7 @@ def registerProf(request):
             prof.save()
             print('saved')
             #login(request,user)
-            return redirect('landing')
+            return redirect('professional-profile')
         else:
             print('sad')
             messages.error(request,'An error occured during registraton')
@@ -408,7 +408,10 @@ def processOrder(request):
 
 
 
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
+def profile(request):
+    return render(request,'base/professional-profile.html')
 
 # def legal(request):
 #     return HttpResponse('Legal')

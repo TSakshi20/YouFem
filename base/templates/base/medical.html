@@ -58,7 +58,7 @@
             {% if request.user.is_authenticated %}
 
             <li>
-              <a href="#">{{request.user.first_name}}</a>
+              <a href="{%url 'professional-profile' %}">{{request.user.first_name}}</a>
               <i class="bx bxs-chevron-down mental-arrow arrow"></i>
               <ul class="mental-sub-menu sub-menu">
                 <li><a href="{%url 'logout' %}">Logout</a></li>
