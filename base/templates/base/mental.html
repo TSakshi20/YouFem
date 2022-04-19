@@ -93,86 +93,46 @@
       <div class="team">
         <div class="title"><span>Psychologists</span></div>
         <div class="row">
+          
           <div class="team-items">
+            {% for prof in professionals %}
             <div class="item">
-              <img src=" {% static 'images/psycha1.jpg'  %}" alt="team" />
+              {% if prof.profession == "Psychologist" %}
+              <img src="{{prof.profile_pic.url}}" alt="team" />
               <div class="inner">
                 <div class="info">
-                  <h5>Doctor 1-name</h5>
-                  <p>Experience</p>
+                  <h5>{{prof.user.first_name}} {{prof.user.last_name}}</h5>
+                  <p>{{prof.experience}}</p>
                   <div class="social-links">
                     <button>Book Appointment</button>
                   </div>
                 </div>
               </div>
+              {% endif %}
             </div>
-            <div class="item">
-              <img src=" {% static 'images/pyscha2.jpg'  %}" alt="team" />
-              <div class="inner">
-                <div class="info">
-                  <h5>Doctor 2-name</h5>
-                  <p>Experience</p>
-                  <div class="social-links">
-                    <button>Book Appointment</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src=" {% static 'images/psc3.jpg'  %}" alt="team" />
-              <div class="inner">
-                <div class="info">
-                  <h5>Doctor 3-name</h5>
-                  <p>Experience</p>
-                  <div class="social-links">
-                    <button>Book Appointment</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src=" {% static 'images/pys4.jpg'  %}" alt="team" />
-              <div class="inner">
-                <div class="info">
-                  <h5>Doctor 4-name</h5>
-                  <p>Experience</p>
-                  <div class="social-links">
-                    <button>Book Appointment</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
+            {% endfor %}
           </div>
+          
         </div>
+        
       </div>
     </section>
+
+
+
     <!--------------------------------------------------Cards------------------------------------------------------->
     <section class="help-section" id="cards">
       <div  class="head-title"><h2 style="justify-content: center;">Specialized Help For Your Mental Health</h2></div>
       <div class="row">
+        {% for psycho in psychoDisorder %}
         <div class="column">
           <div class="card">
-            <h3>Anxiety</h3>
+            <h3>{{psycho.pdname}}</h3>
           </div>
         </div>
+        {% endfor %}
       
-        <div class="column">
-          <div class="card">
-            <h3>Stress</h3>
-          </div>
-        </div>
-        
-        <div class="column">
-          <div class="card">
-            <h3>Depression</h3>
-          </div>
-        </div>
-        
-        <div class="column">
-          <div class="card">
-            <h3>Trauma</h3>
-          </div>
-        </div>
       </div>      
 
     </section>

@@ -331,6 +331,7 @@
 				{% for prof in professionals%}
         			<div class="col-md-3">
         				<div class="menu-entry">
+							{% if prof.profession == "Lawyer" %}
 							<a href="#" class="img" style="background-image: url({{prof.profile_pic.url}});"></a>
     						<div class="text text-center pt-4">
     							<h3><a href="#">{{prof.user.first_name}} {{prof.user.last_name}}</a></h3>
@@ -339,6 +340,7 @@
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 									Book an Appointment
   								</button>
+								  {% endif %}
   
   								<!-- Modal -->
   								<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
