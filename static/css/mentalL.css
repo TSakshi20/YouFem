@@ -362,7 +362,11 @@ section {
 /*--------------------------------------------------card help css----------------------------*/
 .help-section{
   margin: 2px;
-  padding: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .help-section .head-title{
   align-items: center;
@@ -371,12 +375,12 @@ section {
   font-weight: bold;
   text-shadow : 3px 3px 0px #222, 5px 5px 0px #378fe5;
   color : #007ACE;
-  padding-left: 200px;
+  /*padding-left: 200px*/
 }
 .column {
   float: left;
-  width: 25%;
-  padding: 0 10px;
+  width: 30%;
+  padding: 5px 10px;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -404,6 +408,7 @@ section {
   padding: 16px;
   text-align: center;
   background: linear-gradient(blue,2%, pink);
+  /*width: fit-content;*/
 }
 /* team css */
 .team-section {
