@@ -1,33 +1,111 @@
-
-
-
-
-
-<!Doctype html>
+<!DOCTYPE html>
 {%load static %}
 <html lang="en" dir="litr">
-<head>
-	<meta charset="utf-8">
-	<title>Register Form</title>
-	<iframe width="0" height="0" src="" frameborder="0" allowfullscreen></iframe>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
-</head>
-<body>
-	<form class="box" action="{% url 'register-prof' %}" method="POST" enctype="multipart/form-data" novalidate>
-        {% csrf_token %}
-        <h1>Professional Registeration</h1>
-           {% for field in form.visible_fields %}
-             <div class="form-group">
-                 {{ field.label_tag }}
-                    {{field}}
-                      {% for error in field.errors %}
-                        <span style="color:red">{{ error }}</span>
-                      {% endfor %}
-           {% endfor %}
-               <input type="submit" value="Register" class="btn btn-block btn-primary">
-               
-             </div>
-      </form>
-      <!--a href="{%url 'login' %}" ><button class="login">Login</button></a>-->
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Register Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/login.css' %}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--------------------------------------------------------------NAVBAR------------------------------------------------------------------>
+    <nav>
+      <div class="navbar">
+        <i class="bx bx-menu"></i>
+        <div class="logo">
+          <a href="{%url 'landing' %}">You<span class="fem">Fem</span></a>
+        </div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">You<span class="fem">Fem</span></span>
+            <i class="bx bx-x"></i>
+          </div>
+          <ul class="links">
+            <li>
+              <a href="{% url 'medical' %}">Medical Care</a>
+              <i class="bx bxs-chevron-down medical-arrow arrow"></i>
+              <ul class="medical-sub-menu sub-menu">
+                <li><a href="#">Consult Doctor</a></li>
+                <li><a href="#">YouFem Store</a></li>
+                <!-- <li><a href="#">Period Tracker</a></li> -->
+              </ul>
+            </li>
+            <li>
+              <a href="{%url 'legal' %}">Legal Services</a>
+              <i class="bx bxs-chevron-down legal-arrow arrow"></i>
+              <ul class="legal-sub-menu sub-menu">
+                <li><a href="#">Consult Lawyer</a></li>
+                <li><a href="#">Know Your Rights</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="{%url 'mental'%}">Mental Health</a>
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="#">Consult Psychiatrist</a></li>
+                <li><a href="#">Mental Health Quiz</a></li>
+              </ul>
+            </li>
+
+            <!--<li><a href="#">Forum</a></li>-->
+            <li><a href="#contact">Contact Us</a></li>
+
+            {% if request.user.is_authenticated %}
+
+            <li>
+              <a href="{%url 'professional-profile' %}"
+                >{{request.user.first_name}}</a
+              >
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="{%url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+
+            {% else %}
+            <li id="login-signup">
+              <a href="{%url 'register-user' %}">Login/SignUp</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="services-section">
+      <div class="container">
+        <div style="height: 550px" class="forms">
+          <div style="padding-top: 100px" class="form login">
+            <span class="title">Professional Registeration</span>
+            <form
+              action="{% url 'register-prof' %}"
+              method="POST"
+              enctype="multipart/form-data"
+              novalidate
+            >
+              {% csrf_token %} {% for field in form.visible_fields %}
+              <div class="inputs">
+                {{ field.label_tag }} {{field}} {% for error in field.errors %}
+                <span style="color: red">{{ error }}</span>
+                {% endfor %} {% endfor %}
+                <div class="input-field button">
+                  <a href="{% url 'professional-profile' %}"
+                    ><input type="submit" value="Register" class="button"
+                  /></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--a href="{%url 'login' %}" ><button class="login">Login</button></a>-->
+  </body>
 </html>
