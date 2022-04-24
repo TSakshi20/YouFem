@@ -1,59 +1,148 @@
-<!--<!Doctype html>
+
+<!DOCTYPE html>
 {%load static %}
 <html lang="en" dir="litr">
-<head>
-	<meta charset="utf-8">
-	<title>Login Form</title>
-	<iframe width="0" height="0" src="" frameborder="0" allowfullscreen></iframe>
-	<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}">
-</head>
-<body>
-	<form class="box" action="" method="POST">
-		{% csrf_token %}
- <h1>Login</h1>
- <input type="text" name="username" placeholder="Email" required=""> 
- <select id="usertype" name="usertype">
-	<option value="user">User</option>
-	<option value="admin">Admin</option>
-	<option value="Professional">Professional</option>
-</select>
- <input type="password" name="password" placeholder="Password">
- <input type="submit" name="" value="Login">
- <!--p style="color:white;"--><!--input type="checkbox" name="" checked ="checked" color="black"-->  
- <!--<a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>>
- <a href="{%url 'register-prof' %}" >SIGN UP (Professional)</a></p>>
-</form>
-</body>
-</html>-->
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  </head>
+  <body>
+    <!--------------------------------------------------------------NAVBAR------------------------------------------------------------------>
+    <nav>
+      <div class="navbar">
+        <i class="bx bx-menu"></i>
+        <div class="logo">
+          <a href="{%url 'landing' %}">You<span class="fem">Fem</span></a>
+        </div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">You<span class="fem">Fem</span></span>
+            <i class="bx bx-x"></i>
+          </div>
+          <ul class="links">
+            <li>
+              <a href="{% url 'medical' %}">Medical Care</a>
+              <i class="bx bxs-chevron-down medical-arrow arrow"></i>
+              <ul class="medical-sub-menu sub-menu">
+                <li><a href="#">Consult Doctor</a></li>
+                <li><a href="#">YouFem Store</a></li>
+                <!-- <li><a href="#">Period Tracker</a></li> -->
+              </ul>
+            </li>
+            <li>
+              <a href="{%url 'legal' %}">Legal Services</a>
+              <i class="bx bxs-chevron-down legal-arrow arrow"></i>
+              <ul class="legal-sub-menu sub-menu">
+                <li><a href="#">Consult Lawyer</a></li>
+                <li><a href="#">Know Your Rights</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="{%url 'mental'%}">Mental Health</a>
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="#">Consult Psychiatrist</a></li>
+                <li><a href="#">Mental Health Quiz</a></li>
+              </ul>
+            </li>
 
+            <!--<li><a href="#">Forum</a></li>-->
+            <li><a href="#contact">Contact Us</a></li>
 
+            {% if request.user.is_authenticated %}
 
+            <li>
+              <a href="{%url 'professional-profile' %}"
+                >{{request.user.first_name}}</a
+              >
+              <i class="bx bxs-chevron-down mental-arrow arrow"></i>
+              <ul class="mental-sub-menu sub-menu">
+                <li><a href="{%url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
 
-
-<!Doctype html>
-{%load static %}
-<html lang="en" dir="litr">
-<head>
-	<meta charset="utf-8">
-	<title>Login Form</title>
-	<iframe width="0" height="0" src="" frameborder="0" allowfullscreen></iframe>
-	<link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}">
-</head>
-<body>
-	<form class="box" action="" method="POST">
-		{% csrf_token %}
- <h1>Login</h1>
- <input type="text" name="username" placeholder="Email" required=""> 
- <select id="usertype" name="usertype">
-	<option value="user">User</option>
-	<!--<option value="admin">admin</option>-->
-	<option value="Professional">Professional</option>
-</select>
- <input type="password" name="password" placeholder="Password">
- <input type="submit" name="" value="Login">
- <!--p style="color:white;"--><!--input type="checkbox" name="" checked ="checked" color="black"-->  
- <a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>>
- <a href="{%url 'register-prof' %}" >SIGN UP (Professional)</a></p>>
-</form>
-</body>
+            {% else %}
+            <li id="login-signup">
+              <a href="{%url 'register-user' %}">Login/SignUp</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<section class="services-section">
+		<!-- <form class="box" action="" method="POST">
+			{% csrf_token %}
+			<h1>Login</h1>
+			<input type="text" name="username" placeholder="Email" required=""> 
+			<select id="usertype" name="usertype">
+				<option value="user">User</option>
+				<!--<option value="admin">admin</option>-->
+				<!--<option value="Professional">Professional</option>
+			</select>-->
+			<!-- <input type="password" name="password" placeholder="Password">
+			<input type="submit" name="" value="Login"> -->
+			<!--p style="color:white;"--><!--input type="checkbox" name="" checked ="checked" color="black"-->  
+			<!-- <a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>
+			<a href="{%url 'register-prof' %}" >SIGN UP (Professional)</a></p>
+		</form> --> 
+		<div class="container">
+			<div class="forms">
+				<div class="form login">
+					<span class="title">Login</span>
+	
+					<form action="" method="POST">
+						{% csrf_token %}
+						<div class="input-field">
+							<input type="text" name="username" placeholder="Enter your email" required>
+							<i class="uil uil-envelope icon"></i>
+						</div>
+						<div class="input-field">
+							<input type="password" name="password" class="password" placeholder="Enter your password" required>
+							<i class="uil uil-lock icon"></i>
+							<!-- <i class="uil uil-eye-slash showHidePw"></i> -->
+						</div>
+	
+						<!-- <div class="checkbox-text">
+							<div class="checkbox-content">
+								<input type="checkbox" id="logCheck">
+								<label for="logCheck" class="text">Remember me</label>
+							</div>
+							
+							<a href="#" class="text">Forgot password?</a>
+						</div> -->
+	 					<div class="input-field">
+							<select id="usertype" name="usertype">
+								<option value="user">User</option>
+								<!-- <option value="admin">admin</option> -->
+								<option value="Professional">Professional</option>
+							</select>
+						</div>
+						
+						<div class="input-field button">
+						  <a href="{% url 'landing' %}"><input type="submit" name="" value="Login Now"></a>
+						</div>
+					</form>
+	
+					<div class="login-signup">
+						<span class="text">Not a member?
+							<a href="{%url 'register-user' %}" >SIGN UP (User)</a></p>
+							<a href="{%url 'register-prof' %}" >SIGN UP (Professional)</a></p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!-------------------------------------------------------------Footer------------------------------------------------------------------>
+    
+  </body>
 </html>
