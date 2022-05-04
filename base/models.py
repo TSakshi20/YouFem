@@ -92,7 +92,8 @@ class Product(models.Model):
 	price = models.FloatField()
 	#digital = models.BooleanField(default=False,null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
-
+	stock = models.IntegerField(default=0, blank=True)
+	
 	def __str__(self):
 		return self.name
 
