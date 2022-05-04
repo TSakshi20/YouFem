@@ -308,19 +308,25 @@ def updateItem(request):
 	product = Product.objects.get(id=productId)
 	order, created=Order.objects.get_or_create(customer=customer, complete=False)
 	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-
-	if action == 'add':
+	temp = orderItem.product.stock
+	
+	if ((action == 'add') and (orderItem.quantity < temp)):
 		orderItem.quantity = (orderItem.quantity + 1)
-	elif action == 'remove':
+		#orderItem.product.stock = (orderItem.product.stock-1)
+	elif ((action == 'remove')):
 		orderItem.quantity = (orderItem.quantity - 1)
+		#orderItem.product.stock = (orderItem.product.stock+1)
 
 	orderItem.save()
+	#orderItem.product.stock = orderItem.product.stock - orderItem.quantity 
+	#orderItem.product.save()
 
 	if orderItem.quantity <= 0:
 		orderItem.delete()
 
 	return JsonResponse('Item was added', safe=False)
 
+    
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
 	data = json.loads(request.body)
