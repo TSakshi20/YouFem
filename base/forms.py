@@ -5,13 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Professional,User,Customer
 from django.db import transaction
 
-
-
 class CustomerSignUpForm(UserCreationForm):
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
-    #phone_number = forms.CharField(required=True)
-    #location = forms.CharField(required=True)
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -24,11 +20,8 @@ class CustomerSignUpForm(UserCreationForm):
         user.last_name = self.cleaned_data.get('last_name')
         user.save()
         customer = Customer.objects.create(user=user)
-        #customer.phone_number=self.cleaned_data.get('phone_number')
-        #customer.location=self.cleaned_data.get('location')
         customer.save()
         return user
-
 
 
 class EmployeeSignUpForm(UserCreationForm):
